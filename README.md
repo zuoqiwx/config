@@ -119,6 +119,12 @@ Personal macOS configuration, tracked as a git repository rooted at `~/.config`.
 - Config: `herdr/config.toml`
 - Runtime state (`session.json`, `*.log`, `.plugins.lock`) is gitignored.
 - Update with `herdr update`.
+- Intel macOS limitation: this machine is a Homebrew Tier 3 configuration (x86 on
+  recent macOS), and no bottles exist for `herdr`, `zig`, or `llvm@22`. Upgrading
+  would source-build LLVM, Zig, and Rust for hours, so the formula is pinned here
+  (`brew pin herdr`) and stays at the installed version; `brew bundle check` treats
+  the pin as satisfied. On Apple Silicon, or once bottles exist, use
+  `brew unpin herdr && brew upgrade herdr`.
 
 ## Fresh machine onboarding
 
@@ -220,5 +226,8 @@ Assumes a clean macOS machine with Homebrew and `git` available.
 - `btop/btop.conf` contains an absolute, versioned Homebrew path (see btop above).
 - `htoprc` is rewritten by htop and will show diffs after tuning settings in the UI.
 - `starship` and opencode require `~/.zshrc` changes that are not part of this repo.
+- `herdr` is pinned (`brew pin herdr`) on x86 macOS: Tier 3 means no bottles, so an
+  upgrade triggers a multi-hour LLVM/Zig/Rust source build. Apple Silicon machines
+  do not need the pin.
 - No symlink farm is used: this repo covers `~/.config` only. Files elsewhere in
   `$HOME` are not tracked; see Stow / `yadm` / a bare repo if that changes.

@@ -18,7 +18,7 @@ Guidance for AI agents working in this repository.
 | `btop/btop.conf` | btop | `color_theme` is an absolute Cellar path; keep it working or use `~/.config/btop/themes/` |
 | `gh-dash/config.yml` | gh CLI extension `dlvhdr/gh-dash` | YAML; validated by `gh dash` |
 | `ghostty/config` | Ghostty terminal | key = value format |
-| `herdr/config.toml` | herdr | TOML; runtime state is ignored |
+| `herdr/config.toml` | herdr | TOML; runtime state is ignored; formula pinned on Intel macOS |
 | `htop/htoprc` | htop | Rewritten by htop itself |
 | `nvim/` | Neovim 0.12+ | See Neovim conventions below |
 | `opencode/opencode.jsonc`, `opencode/tui.jsonc` | opencode | JSONC; validated by opencode |
@@ -41,6 +41,9 @@ dependencies change.
   by TPM; Neovim plugins by `vim.pack`.
 - Do not run installers or intrusive commands (`brew bundle`, `tpm` install,
   `herdr update`, `gh extension install`) unless explicitly asked.
+- Do not upgrade `herdr` on Intel macOS unless explicitly asked: no Homebrew bottles
+  exist for this Tier 3 config, so `brew upgrade herdr` source-builds LLVM/Zig/Rust
+  for hours. It is pinned (`brew pin herdr`); treat `brew unpin` as a deliberate action.
 - Do not modify `~/.zshrc` from this repo; it is out of scope.
 
 ## Conventions
