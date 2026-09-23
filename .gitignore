@@ -1,0 +1,15 @@
+# Out of scope
+configstore/
+iterm2/
+mole/
+
+# Nested git repos / tool-managed
+tmux/plugins/
+
+# Dependencies
+node_modules/
+
+# Runtime state / logs
+herdr/*.log
+herdr/session.json
+herdr/.plugins.lock

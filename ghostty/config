@@ -1,0 +1,22 @@
+# Ghostty 1.3.1 — Neovim / TUI-focused
+
+# --- Appearance ---
+theme = TokyoNight Storm
+font-family = JetBrainsMono Nerd Font Propo
+font-size = 14
+font-thicken = true
+background-opacity = 1
+
+# --- Neovim / TUI fidelity ---
+clipboard-read = allow
+clipboard-write = allow
+shell-integration = detect
+shell-integration-features = cursor,title,path
+mouse-scroll-multiplier = precision:1,discrete:3
+macos-option-as-alt = true
+
+# --- Window / UX ---
+# macos-titlebar-style = hidden
+copy-on-select = clipboard
+scrollback-limit = 10000000
+confirm-close-surface = false

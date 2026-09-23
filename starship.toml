@@ -1,0 +1,184 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 1000
+palette = "tokyo_night"
+
+# line 1: context   line 2: input
+format = """\
+$directory$git_branch$git_status\
+$c$cpp$cmake$dart$deno$elixir$elm$golang$haskell$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$python$ruby$rust$scala$swift$zig$package\
+$cmd_duration\
+$fill$time\
+$line_break\
+$character"""
+
+[palettes.tokyo_night]
+base    = "#1a1b26"
+text    = "#c0caf5"
+blue    = "#7aa2f7"
+cyan    = "#7dcfff"
+purple  = "#bb9af7"
+green   = "#9ece6a"
+orange  = "#ff9e64"
+yellow  = "#e0af68"
+red     = "#f7768e"
+comment = "#565f89"
+
+[directory]
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = '…/'
+style = 'bold fg:blue'
+read_only = ' 🔒'
+
+[git_branch]
+format = '[\[$branch]($style)'
+style = 'bold fg:purple'
+
+[git_status]
+format = '([ $all_status$ahead_behind]($style))[\]](bold fg:purple) '
+style = 'bold fg:yellow'
+conflicted = '='
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+up_to_date = ''
+untracked = '?${count}'
+stashed = '⚑${count}'
+modified = '!${count}'
+staged = '+${count}'
+renamed = '»${count}'
+deleted = '✘${count}'
+
+[cmd_duration]
+min_time = 1000
+show_milliseconds = false
+format = '[$duration]($style) '
+style = 'bold fg:yellow'
+
+[fill]
+symbol = ' '
+
+[time]
+disabled = false
+time_format = '%I:%M %p'
+format = '[ $time]($style) '
+style = 'fg:comment'
+
+[character]
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+# language / context modules
+[rust]
+symbol = "🦀"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:orange'
+[python]
+symbol = "🐍"
+format = '[\[$symbol( ${pyenv_prefix}${version})( \(${virtualenv}\))\]]($style) '
+style = 'bold fg:yellow'
+[nodejs]
+symbol = "\ue718"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:green'
+[golang]
+symbol = "🐹"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:cyan'
+[c]
+symbol = "C"
+format = '[\[$symbol( $version)(-$name)\]]($style) '
+style = 'bold fg:blue'
+[cpp]
+symbol = "C++"
+format = '[\[$symbol( $version)(-$name)\]]($style) '
+style = 'bold fg:blue'
+[cmake]
+symbol = "△"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:blue'
+[java]
+symbol = "☕"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:orange'
+[ruby]
+symbol = "💎"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:red'
+[php]
+symbol = "🐘"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:purple'
+[lua]
+symbol = "🌙"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:blue'
+[perl]
+symbol = "🐪"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:purple'
+[kotlin]
+symbol = "🅺"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:purple'
+[swift]
+symbol = "🐦"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:orange'
+[scala]
+symbol = "🆂"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:red'
+[haskell]
+symbol = "λ"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:purple'
+[julia]
+symbol = "ஃ"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:purple'
+[elixir]
+symbol = "💧"
+format = '[\[$symbol( $version)( \(OTP $otp_version\))\]]($style) '
+style = 'bold fg:purple'
+[elm]
+symbol = "🌳"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:cyan'
+[ocaml]
+symbol = "🐫"
+format = '[\[$symbol( $version)( \($switch_indicator$switch_name\))\]]($style) '
+style = 'bold fg:orange'
+[nim]
+symbol = "👑"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:yellow'
+[zig]
+symbol = "↯"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:yellow'
+[dart]
+symbol = "🎯"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'bold fg:cyan'
+[deno]
+symbol = "🦕"
+format = '[\[$symbol( $version)\]]($style) '
+style = 'fg:text'
+[docker_context]
+disabled = true
+[package]
+format = '[\[$version\]]($style) '
+version_format = 'v${raw}'
+style = 'fg:text'
+disabled = false
