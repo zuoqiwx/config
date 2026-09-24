@@ -61,6 +61,9 @@ dependencies change.
   - Lua style: tabs/spaces per `nvim/stylua.toml`; run `stylua` before committing.
   - Plugin modules live in `nvim/lua/plugins/`; lazy-loading is wired in
     `nvim/lua/autocmds.lua` and `nvim/lua/keymaps.lua`.
+  - The bottom terminal uses `folke/snacks.nvim`, lazy-loaded inside
+    `nvim/lua/plugins/terminal.lua` and bound in `nvim/lua/keymaps.lua` (`<C-/>`,
+    `<C-_>`, `<leader>ft`, `<leader>fT`).
 - tmux: keep explanatory comments for non-obvious bindings/options; add new plugins to
   the `@plugin` list at the bottom of `tmux/tmux.conf` and reinstall via TPM.
 - Keep edits ASCII unless the file already uses glyphs (tmux/tmux.conf does).

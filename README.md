@@ -68,6 +68,9 @@ Personal macOS configuration, tracked as a git repository rooted at `~/.config`.
   - Lua: `stylua` (`brew install stylua`)
   - JS/TS/CSS/HTML/JSON/YAML/Markdown/GraphQL: `prettier` (`npm i -g prettier`)
   - Go: `gofmt` (ships with Go)
+- Bottom terminal: `Ctrl+/` (or `Ctrl-_`) focuses/hides a persistent shell split,
+  keyed per project root; `<leader>ft` / `<leader>fT` open root/cwd terminals.
+  Provided by `snacks.nvim` (pure Lua, lazy-loaded on first use — no extra binaries).
 - Update plugins with `:lua vim.pack.update()` (review the buffer, `:write` to apply).
 
 ### btop
