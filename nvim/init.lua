@@ -95,6 +95,11 @@ vim.pack.add({
 		src = "https://github.com/folke/noice.nvim",
 		name = "noice.nvim",
 	},
+	-- 18. Terminal (lazy-loaded via keymaps)
+	{
+		src = "https://github.com/folke/snacks.nvim",
+		name = "snacks.nvim",
+	},
 }, { load = false }) -- Don't auto-load; we control load order below
 
 -- ========================================

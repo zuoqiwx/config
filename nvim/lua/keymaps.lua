@@ -143,3 +143,20 @@ end, { desc = 'GitHub Dashboard (gh-dash, floating)' })
 map('n', '<leader>gg', function()
   float_term.toggle('lazygit', { 'lazygit' })
 end, { desc = 'Lazygit (floating)' })
+
+-- Bottom terminal (snacks, lazy-loaded). Ctrl+/ focuses/hides per project root.
+map({ 'n', 't' }, '<C-/>', function()
+  require('plugins.terminal').focus()
+end, { desc = 'Terminal (Root Dir)' })
+
+map({ 'n', 't' }, '<C-_>', function()
+  require('plugins.terminal').focus()
+end, { desc = 'Terminal (Root Dir)' })
+
+map('n', '<leader>ft', function()
+  require('plugins.terminal').toggle_root()
+end, { desc = 'Terminal (Root Dir)' })
+
+map('n', '<leader>fT', function()
+  require('plugins.terminal').toggle_cwd()
+end, { desc = 'Terminal (cwd)' })
