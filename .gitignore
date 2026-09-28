@@ -13,3 +13,6 @@ node_modules/
 herdr/*.log
 herdr/session.json
 herdr/.plugins.lock
+
+# macOS
+.DS_Store
